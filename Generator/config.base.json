@@ -72,7 +72,7 @@
     "ImU64": "ulong",
     "ImWchar16": "ushort",
     "ImWchar32": "uint",
-    "ImWchar": "uint",
+    "ImWchar": "ushort",
     "ImDrawIdx": "ushort",
     "ImGuiKeyChord": "int",
     "ImGuiKeyRoutingIndex": "short",
@@ -86,11 +86,18 @@
     "ImTextureID": "ImTextureID",
     "ImFileHandle": "ImFileHandle",
     "ImVec2_c": "Vector2",
+    "ImVec2C": "Vector2",
     "ImVec3_c": "Vector3",
+    "ImVec3C": "Vector3",
     "ImVec4_c": "Vector4",
+    "ImVec4C": "Vector4",
     "ImVec2i_c": "ImVec2I",
+    "ImVec2iC": "ImVec2I",
     "ImColor_c": "ImColor",
+    "ImColorC": "ImColor",
     "ImRect_c": "ImRect",
-    "ImTextureRef_c": "ImTextureRef"
+    "ImRectC": "ImRect",
+    "ImTextureRef_c": "ImTextureRef",
+    "ImTextureRefC": "ImTextureRef"
   }
 }

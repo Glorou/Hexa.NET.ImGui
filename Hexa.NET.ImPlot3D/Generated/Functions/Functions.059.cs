@@ -3565,9 +3565,9 @@ namespace Hexa.NET.ImPlot3D
 		/// </summary>
 		[NativeName(NativeNameType.Func, "ImPlot3D_GetPlotDrawList")]
 		[return: NativeName(NativeNameType.Type, "ImDrawList *")]
-		public static ImDrawListPtr GetPlotDrawList()
+		public static ImDrawList* GetPlotDrawList()
 		{
-			ImDrawListPtr ret = GetPlotDrawListNative();
+			ImDrawList* ret = GetPlotDrawListNative();
 			return ret;
 		}
 

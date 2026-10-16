@@ -6,10 +6,21 @@
 
 #include "cimgui.h"
 
+#define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+
+
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include <time.h>
 typedef struct tm tm;
 
+typedef struct ImPlotAxis_c ImPlotAxis;
+typedef struct ImPlotDateTimeSpec_c ImPlotDateTimeSpec;
+typedef struct ImPlotPoint_c ImPlotPoint;
+typedef struct ImPlotRange_c ImPlotRange;
+typedef struct ImPlotRect_c ImPlotRect;
+typedef struct ImPlotSpec_c ImPlotSpec;
+typedef struct ImPlotTick_c ImPlotTick;
+typedef struct ImPlotTime_c ImPlotTime;
 
 typedef struct ImPlotContext ImPlotContext;
 typedef struct ImPlotTick_c ImPlotTick_c;
@@ -326,6 +337,8 @@ typedef enum {
     ImPlotMarker_Cross,
     ImPlotMarker_Plus,
     ImPlotMarker_Asterisk,
+    ImPlotMarker_Vertical,
+    ImPlotMarker_Horizontal,
     ImPlotMarker_COUNT
 }ImPlotMarker_;
 typedef enum {
@@ -1553,6 +1566,9 @@ CIMGUI_API ImPlotAnnotationCollection* ImPlotAnnotationCollection_ImPlotAnnotati
 CIMGUI_API void ImPlotAnnotationCollection_destroy(ImPlotAnnotationCollection* self);
 CIMGUI_API void ImPlotAnnotationCollection_AppendV(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args);
 CIMGUI_API void ImPlotAnnotationCollection_Append(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...);
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotAnnotationCollection_Append0(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt);
+#endif
 CIMGUI_API const char* ImPlotAnnotationCollection_GetText(ImPlotAnnotationCollection* self,int idx);
 CIMGUI_API void ImPlotAnnotationCollection_Reset(ImPlotAnnotationCollection* self);
 CIMGUI_API ImPlotTag* ImPlotTag_ImPlotTag(void);
@@ -1561,6 +1577,9 @@ CIMGUI_API ImPlotTagCollection* ImPlotTagCollection_ImPlotTagCollection(void);
 CIMGUI_API void ImPlotTagCollection_destroy(ImPlotTagCollection* self);
 CIMGUI_API void ImPlotTagCollection_AppendV(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt,va_list args);
 CIMGUI_API void ImPlotTagCollection_Append(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt,...);
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotTagCollection_Append0(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt);
+#endif
 CIMGUI_API const char* ImPlotTagCollection_GetText(ImPlotTagCollection* self,int idx);
 CIMGUI_API void ImPlotTagCollection_Reset(ImPlotTagCollection* self);
 CIMGUI_API ImPlotTick* ImPlotTick_ImPlotTick_Nil(void);
@@ -1712,6 +1731,8 @@ CIMGUI_API ImU32 ImPlot_GetColormapColorU32(int idx,ImPlotColormap cmap);
 CIMGUI_API ImU32 ImPlot_NextColormapColorU32(void);
 CIMGUI_API ImU32 ImPlot_SampleColormapU32(float t,ImPlotColormap cmap);
 CIMGUI_API void ImPlot_RenderColorBar(const ImU32* colors,int size,ImDrawList* DrawList,const ImRect_c bounds,bool vert,bool reversed,bool continuous);
+CIMGUI_API void ImPlot_AddLineH(ImDrawList* draw_list,float x1,float x2,float y,ImU32 col,float thickness);
+CIMGUI_API void ImPlot_AddLineV(ImDrawList* draw_list,float x,float y1,float y2,ImU32 col,float thickness);
 CIMGUI_API double ImPlot_NiceNum(double x,bool round);
 CIMGUI_API int ImPlot_OrderOfMagnitude(double val);
 CIMGUI_API int ImPlot_OrderToPrecision(int order);

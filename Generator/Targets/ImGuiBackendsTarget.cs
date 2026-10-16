@@ -100,8 +100,6 @@
                     builder.WithPrefix("CIMGUI_USE_")
                         .WithSelector(name, (option, value, cond) => $"{value ?? option}={(cond ? "1" : "0")}", StringComparer.OrdinalIgnoreCase.Equals)
                             .Option("GLFW")
-                            .Option("SDL2", ["SDL2", "SDL2Renderer"])
-                            .Option("SDL3", ["SDL3", "SDL3Renderer", "SDLGPU3"])
                             .Option("OPENGL2")
                             .Option("OPENGL3")
                             .Option("D3D9")

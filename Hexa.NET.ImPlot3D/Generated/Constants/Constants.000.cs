@@ -16,5 +16,21 @@ namespace Hexa.NET.ImPlot3D
 {
 	public unsafe partial class ImPlot3D
 	{
+		[NativeName(NativeNameType.Const, "CIMGUI_VARGS0")]
+		[NativeName(NativeNameType.Value, "1")]
+		public const int CIMGUI_VARGS0 = 1;
+
+		[NativeName(NativeNameType.Const, "IMGUI_USE_WCHAR32")]
+		[NativeName(NativeNameType.Value, "1")]
+		public const int IMGUI_USE_WCHAR32 = 1;
+
+		[NativeName(NativeNameType.Const, "IMGUI_ENABLE_FREETYPE")]
+		[NativeName(NativeNameType.Value, "1")]
+		public const int IMGUI_ENABLE_FREETYPE = 1;
+
+		[NativeName(NativeNameType.Const, "CIMGUI_DEFINE_ENUMS_AND_STRUCTS")]
+		[NativeName(NativeNameType.Value, "1")]
+		public const int CIMGUI_DEFINE_ENUMS_AND_STRUCTS = 1;
+
 	}
 }
